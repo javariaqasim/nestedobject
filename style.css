@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&family=Roboto+Slab:wght@500&display=swap');
+
+
+.Row {
+    display: table;
+    width: 100%;
+    table-layout: fixed; 
+    border-spacing: 10px; 
+}
+.Column {
+    display: table-cell;
+    background-color: white; 
+}
