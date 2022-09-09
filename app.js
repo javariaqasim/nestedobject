@@ -1,4 +1,4 @@
-var products = {
+let products = {
          Realme:{
             realme9: {
                   version: "Android 47.51%",
@@ -114,15 +114,14 @@ var products = {
   
   let productType = document.getElementById('productType')
   let productCategory = document.getElementById('productCategory')
-  let productKeys = Object.keys(products) //walets bags
-  var productValues
-  var searchItem
-  var ptInd, pcInd;
+  let productKeys = Object.keys(products) 
+  let  productValues
+  let searchItem
+  let ptInd, pcInd;
   
   function fillProductType() {
       console.log(productKeys)
-      // productType.innerHTML += `<option id="temp">Product Type</option>`
-  
+
       for (i = 0; i < productKeys.length; i++) {
           productType.innerHTML += `<option>${productKeys[i]}</option>`
       }
@@ -130,36 +129,15 @@ var products = {
   console.log(ptInd)
   }
   fillProductType();
+
   
-  // if(ptInd==0){
-  //     productType.addEventListener('onclick',function(){
-  //         productValues = Object.keys(Object.values(products)[ptInd]) //{bifold: {…}, long: {…}}
-  //         productCategory.disabled = false;
-      
-  //         for (i = 0; i < productValues.length; i++) {
-  //             productCategory.innerHTML += `<option>${productValues[i]}</option>`
-  //         }
-      
-  //         let search = document.getElementById('search')
-  //         search.disabled = false;
-      
-  
-  //     })
-  // }
-  
-  var executed=false
+  let executed=false
   function fillProductCategory() {
-  //   if(executed=false){
-  //     var temp=document.getElementById('temp')
-  //    console.log(temp)
-  
-  //    temp.remove();
-  //    executed=true;
-  // }
+
   productCategory.innerHTML=""
   
           ptInd = productType.selectedIndex
-          productValues = Object.keys(Object.values(products)[ptInd]) //{bifold: {…}, long: {…}}
+          productValues = Object.keys(Object.values(products)[ptInd])
           productCategory.disabled = false;
       
           for (i = 0; i < productValues.length; i++) {
@@ -178,18 +156,18 @@ var products = {
   function searchfunc() {
       search.disabled = true;
       productCategory.disabled = true;
-  // fillProductType();
-      var pcInd = productCategory.selectedIndex
+
+      let pcInd = productCategory.selectedIndex
       let productSpecs = Object.values(Object.values(products)[ptInd])[pcInd]
-      // console.log(productKeys, productValues, productSpecs)
+
   
       let specsTitle = Object.keys(productSpecs)
       let specsValues = Object.values(productSpecs)
       console.log(specsValues)
       let values = document.getElementById('values')
       for (i = 0; i < specsValues.length; i++) {
-          var li = document.createElement('li')
-          var lip= document.createElement('p')
+          let li = document.createElement('li')
+          let lip= document.createElement('p')
           lip.innerHTML = (specsValues[i])
           li.appendChild(lip)
           values.appendChild(li)
